@@ -52,6 +52,8 @@ def create_menu_app():
         meal = ', '.join([item for item in meal_components if item != "N/A"])
         menu_selections[day] = meal if meal else "N/A"
         dessert_selections[day] = selected_dessert if selected_dessert != "N/A" else "N/A"
+        
+        st.divider() 
     
     if st.button("Generate PDF"):
         pdf_buffer = generate_pdf(selected_client, week_start, menu_selections, dessert_selections)
